@@ -16,6 +16,7 @@
             --gray: #6c757d;
             --code-bg: #1e1e3f;
             --card-bg: rgba(30, 30, 63, 0.7);
+            --header-height: 70px;
         }
 
         * {
@@ -40,7 +41,7 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         /* Header & Navigation */
@@ -50,29 +51,32 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 15px 0;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            background: rgba(15, 12, 41, 0.85);
+            background: rgba(15, 12, 41, 0.95);
             border-bottom: 1px solid rgba(138, 43, 226, 0.2);
         }
 
         header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: var(--header-height);
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--light);
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
         .logo span {
@@ -85,14 +89,14 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         .nav-links a {
             color: var(--light);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -120,6 +124,8 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            color: var(--light);
+            z-index: 1001;
         }
 
         /* Hero Section */
@@ -131,7 +137,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: var(--header-height);
         }
 
         .hero::before {
@@ -148,13 +154,14 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
+            padding: 20px;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s forwards 0.3s;
@@ -163,7 +170,7 @@
         .hero h2 {
             font-size: 1.8rem;
             font-weight: 400;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--primary);
             opacity: 0;
             transform: translateY(20px);
@@ -172,8 +179,8 @@
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            max-width: 700px;
+            margin: 0 auto 35px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s forwards 0.7s;
@@ -218,18 +225,18 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
+            font-size: 2.3rem;
+            margin-bottom: 50px;
             position: relative;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 70px;
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
@@ -246,7 +253,7 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--primary);
         }
@@ -261,7 +268,7 @@
         }
 
         .skill {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .skill-info {
@@ -302,8 +309,8 @@
         .work-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .work-card {
@@ -315,8 +322,8 @@
         }
 
         .work-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
             border-color: var(--primary);
         }
 
@@ -329,26 +336,27 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
         .work-icon {
             color: var(--primary);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
         .work-description {
             color: var(--gray);
             margin-bottom: 15px;
+            font-size: 0.95rem;
         }
 
         .code-container {
             background: var(--code-bg);
-            padding: 20px;
+            padding: 18px;
             overflow-x: auto;
             font-family: 'Roboto Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.5;
         }
 
@@ -356,26 +364,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .language-tag {
             background: rgba(138, 43, 226, 0.2);
             color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
         }
 
         .copy-btn {
             background: rgba(255, 255, 255, 0.1);
             color: var(--light);
             border: none;
-            padding: 5px 15px;
-            border-radius: 5px;
+            padding: 5px 12px;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
         }
 
         .copy-btn:hover {
@@ -385,10 +394,13 @@
         pre {
             margin: 0;
             padding: 0;
+            overflow: auto;
         }
 
         code {
             color: #f8f8f2;
+            display: block;
+            white-space: pre;
         }
 
         /* Contact Section */
@@ -398,14 +410,14 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
         }
 
         .contact-item {
@@ -415,13 +427,13 @@
         }
 
         .contact-icon {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--primary);
             min-width: 40px;
         }
 
         .contact-text h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 5px;
         }
 
@@ -429,6 +441,7 @@
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 1rem;
         }
 
         .contact-text a:hover {
@@ -437,30 +450,31 @@
 
         .contact-form {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: var(--light);
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
@@ -471,7 +485,7 @@
         }
 
         textarea.form-control {
-            min-height: 150px;
+            min-height: 140px;
             resize: vertical;
         }
 
@@ -479,32 +493,33 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 14px 30px;
+            padding: 13px 25px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            margin-top: 10px;
         }
 
         .submit-btn:hover {
             background: #7a1ed9;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 8px 18px rgba(138, 43, 226, 0.3);
         }
 
         /* Footer */
         footer {
             background: var(--dark);
-            padding: 30px 0;
+            padding: 25px 0;
             text-align: center;
             border-top: 1px solid rgba(138, 43, 226, 0.1);
         }
 
         .copyright {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Animations */
@@ -530,14 +545,37 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* Responsive Optimizations */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 2.1rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .about-content {
                 flex-direction: column;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
@@ -548,14 +586,15 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: var(--header-height);
                 right: -100%;
                 flex-direction: column;
                 background: var(--darker);
-                width: 100%;
-                height: calc(100vh - 80px);
+                width: 280px;
+                height: calc(100vh - var(--header-height));
                 padding: 40px 20px;
-                transition: right 0.3s ease;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
             }
             
             .nav-links.active {
@@ -563,33 +602,85 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.4rem;
             }
             
             .hero h2 {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.4rem;
             }
             
             .hero p {
                 font-size: 1rem;
             }
             
+            .section-title {
+                font-size: 1.9rem;
+                margin-bottom: 40px;
+            }
+            
             .work-container {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .work-header {
+                padding: 15px;
+            }
+            
+            .code-container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content {
+                padding: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -691,7 +782,7 @@
     <section class="work" id="work">
         <div class="container">
             <h2 class="section-title fade-in">My Work</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;" class="fade-in">
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;" class="fade-in">
                 Here are some examples of Discord bot systems I've developed:
             </p>
             
@@ -851,8 +942,8 @@ export default {
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="fade-in">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Let's Connect</h3>
-                        <p style="font-size: 1.1rem; margin-bottom: 30px;">I'm currently available for freelance work. If you have a project that you want to get started, think you need my help with something, or just want to say hello, then get in touch.</p>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 20px;">Let's Connect</h3>
+                        <p style="font-size: 1.05rem; margin-bottom: 25px;">I'm currently available for freelance work. If you have a project that you want to get started, think you need my help with something, or just want to say hello, then get in touch.</p>
                     </div>
                     
                     <div class="contact-item fade-in">
@@ -910,7 +1001,7 @@ export default {
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 80) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -923,19 +1014,33 @@ export default {
         
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                // Close mobile menu if open
                 navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
                 
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop - document.getElementById('header').offsetHeight,
                     behavior: 'smooth'
                 });
             });
@@ -944,12 +1049,13 @@ export default {
         // Animate on scroll
         function checkScroll() {
             const fadeElements = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
             
             fadeElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
                 
-                if (elementTop < window.innerHeight - elementVisible) {
+                if (elementTop < windowHeight - elementVisible) {
                     element.classList.add('appear');
                 }
             });
@@ -962,7 +1068,7 @@ export default {
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 70,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -972,11 +1078,7 @@ export default {
                     "value": "#8a2be2"
                 },
                 "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
+                    "type": "circle"
                 },
                 "opacity": {
                     "value": 0.5,
@@ -988,7 +1090,7 @@ export default {
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
+                    "distance": 140,
                     "color": "#8a2be2",
                     "opacity": 0.4,
                     "width": 1
@@ -1033,10 +1135,16 @@ export default {
         function copyDiscord() {
             navigator.clipboard.writeText("devcrafters")
                 .then(() => {
-                    alert("Discord ID copied to clipboard!");
+                    const button = document.querySelector('#discord-id + .copy-btn');
+                    const originalText = button.textContent;
+                    button.textContent = "Copied!";
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
                 })
                 .catch(err => {
                     console.error('Failed to copy: ', err);
+                    alert('Failed to copy Discord ID. Please try again.');
                 });
         }
 
@@ -1054,6 +1162,10 @@ export default {
                 })
                 .catch(err => {
                     console.error('Failed to copy: ', err);
+                    button.textContent = "Error!";
+                    setTimeout(() => {
+                        button.textContent = "Copy Code";
+                    }, 2000);
                 });
         }
 
